@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import LoginPage from "./LoginPage";
+import LoginPage from "../pages/LoginPage";
 import App from "../App";
 
 const RoutesWrapper: React.FC = () => {

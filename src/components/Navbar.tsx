@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import { SearchIcon, BellIcon } from "@heroicons/react/outline";
 
 interface NavbarProps {

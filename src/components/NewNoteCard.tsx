@@ -8,7 +8,7 @@ interface NewNoteCardProps {
 
 // Predefined colors and emojis
 const colors = ["bg-pink-100", "bg-yellow-100", "bg-green-100", "bg-blue-100", "bg-purple-100"];
-const emojis = ["🙂", "😢", "😍", "💡", "⭐", "🔥", "🎉"];
+const emojis = ["📝", "💡", "⭐", "💖", "📌"];
 
 const NewNoteCard: React.FC<NewNoteCardProps> = ({ onSave, onCancel }) => {
   const [title, setTitle] = useState("");

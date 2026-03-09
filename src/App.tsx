@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import type { Note } from "./types";
 import NewNoteCard from "./components/NewNoteCard";
 import NoteCard from "./components/NoteCards";
+import NoteIcon from "./assets/images/note.png"; 
 
 const App: React.FC = () => {
   const [notes, setNotes] = useState<Note[]>([]);
@@ -43,7 +44,10 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-pink-50 p-6 flex flex-col items-center">
-      <h1 className="text-4xl font-bold text-pink-600 mb-4">My Notes</h1>
+   <h1 className="text-4xl font-bold text-pink-600 mb-4 flex items-center gap-2">
+  <img src={NoteIcon} alt="note icon" className="w-8 h-8" />
+  MyNotes
+</h1>
       <p className="mb-6 text-gray-600">{notes.length} notes</p>
 
       <button

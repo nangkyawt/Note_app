@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import LoginPage from "../pages/LoginPage";
-import SignUpPage from "../pages/SingUpPage";
+import SignUpPage from "../pages/SignUpPage";
 import App from "../App";
 
 const RoutesWrapper: React.FC = () => {

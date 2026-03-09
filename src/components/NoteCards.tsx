@@ -1,35 +1,39 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import type { Note } from "../types";
 import { TrashIcon, PencilIcon } from '@heroicons/react/outline';
-
 
 interface NoteCardProps {
   note: Note;
   onDelete: (id: number) => void;
   onTogglePin: (id: number) => void; 
   onEdit: (note: Note) => void;
- 
 }
-
 
 const NoteCard: React.FC<NoteCardProps> = ({ note, onDelete, onTogglePin, onEdit }) => {
   return (
     <div
-      className={`relative p-4 rounded-xl shadow-md flex flex-col transition hover:shadow-xl ${
+      className={`relative p-4 rounded-2xl shadow-md flex flex-col transition transform hover:shadow-xl hover:scale-105 ${
         note.color || "bg-white"
       }`}
     >
       {/* Pinned badge */}
       {note.pinned && (
-        <span className="absolute top-2 right-2 text-yellow-500 text-lg">📌</span>
+        <span className="absolute top-2 right-2 text-yellow-400 text-xl">📌</span>
       )}
 
-      {/* Title + Emoji */}
+      {/* Title + Emoji + Actions */}
       <div className="flex justify-between items-start mb-2">
         <h3 className="font-bold text-lg flex items-center gap-2">
-          {note.emoji || "📝"} {note.title || "Untitled"}
+          <span className="text-xl">{note.emoji || "📝"}</span> 
+          {note.title || "Untitled"}
         </h3>
-        <div className="flex gap-2">
+
+        <div className="flex gap-2 items-center">
+          {/* Pin toggle */}
+          <button onClick={() => onTogglePin(note.id)} className="text-pink-500 hover:text-pink-700">
+            {note.pinned ? "📌" : "📍"}
+          </button>
           {/* Edit icon */}
           <button onClick={() => onEdit(note)} className="text-gray-600 hover:text-gray-800">
             <PencilIcon className="w-5 h-5" />
@@ -42,30 +46,23 @@ const NoteCard: React.FC<NoteCardProps> = ({ note, onDelete, onTogglePin, onEdit
       </div>
 
       {/* Content */}
-      <p className="text-gray-700 mb-2">{note.content}</p>
+      <p className="text-gray-700 mb-2 line-clamp-4">{note.content}</p>
 
       {/* Tags */}
       {note.tags && note.tags.length > 0 && (
-        <div className="flex gap-2 flex-wrap">
+        <div className="flex gap-1 flex-wrap mt-auto">
           {note.tags.map((tag) => (
-            <span key={tag} className="text-xs bg-pink-200 px-2 py-1 rounded">
-              {tag}
+            <span
+              key={tag}
+              className="text-xs px-2 py-1 bg-white/70 rounded-full text-pink-600"
+            >
+              #{tag}
             </span>
           ))}
         </div>
       )}
-
-      {/* Pin toggle */}
-      <button
-        onClick={() => onTogglePin(note.id)}
-        className="mt-2 text-pink-500 hover:text-pink-700 font-semibold self-start"
-      >
-        {note.pinned ? "Unpin" : "Pin"}
-      </button>
     </div>
   );
 };
-
-
 
 export default NoteCard;

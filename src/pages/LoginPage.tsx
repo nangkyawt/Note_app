@@ -97,9 +97,10 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
           <span className="mx-2 text-pink-400 text-sm">or login with</span>
           <hr className="flex-grow border-pink-300" />
         </div>
-        
+
        {/* Social login icons - small buttons */}
-<div className="flex justify-center gap-4 mb-4">
+{/* Small square pink social buttons */}
+ <div className="flex justify-center gap-4 mb-4">
   <button
     type="button"
     className="w-10 h-10 p-1 rounded-full border border-pink-300 hover:shadow-md transition-transform transform hover:scale-110"

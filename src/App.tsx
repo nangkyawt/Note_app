@@ -68,7 +68,7 @@ const App: React.FC = () => {
 <div className="w-full max-w-5xl mx-auto mt-12 mb-6 px-4 lg:px-0 flex flex-col sm:flex-row sm:items-center lg:justify-between lg:gap-20 gap-4">
   {/* Left: Title + Count */}
   <div>
-    <h1 className="text-4xl font-bold text-gray-800 flex items-center gap-3" style={{ fontFamily: "Quicksand" }}>
+    <h1 className="text-4xl font-bold text-pink-600 flex items-center gap-3" style={{ fontFamily: "Quicksand" }}>
       <img src={NoteIcon} alt="note icon" className="w-8 h-8" />
       MyNotes
     </h1>
@@ -120,7 +120,7 @@ const App: React.FC = () => {
 
       {/* All Notes */}
       <div className="w-full max-w-5xl mx-auto mb-10 px-4 lg:px-0">
-        <h2 className="text-lg font-semibold text-gray-700 mb-4">All Notes</h2>
+        <h2 className="text-lg font-semibold text-pink-600 mb-4">All Notes</h2>
 
         {unpinnedNotes.length === 0 ? (
           <p className="text-gray-400 text-center">No notes yet. Create your first note to get started!</p>
